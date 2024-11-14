@@ -23,3 +23,5 @@ vim.keymap.set("n", "<leader>lu", "<Cmd>Lazy update<CR>")
 vim.keymap.set("n", "<leader>n", "<Cmd>bn<CR>")
 vim.keymap.set("n", "<leader>p", "<Cmd>bp<CR>")
 vim.keymap.set("n", "<leader>d", "<Cmd>bdelete<CR>")
+
+vim.keymap.set("n", "-", require("oil").open_float, { desc = "Open parent directory" })
