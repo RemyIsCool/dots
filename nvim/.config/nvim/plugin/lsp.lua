@@ -6,12 +6,33 @@ require("conform").setup({
 		python = { "isort", "black" },
 		rust = { "rustfmt", lsp_format = "fallback" },
 		javascript = { "prettier" },
+		typescript = { "prettier" },
+		svelte = { "prettier" },
+		json = { "prettier" },
+		yaml = { "prettier" },
+		astro = { "prettier" },
+		css = { "prettier" },
+		html = { "prettier" },
+		angular = { "prettier" },
+		vue = { "prettier" },
+		flow = { "prettier" },
+		less = { "prettier" },
+		scss = { "prettier" },
+		ember = { "prettier" },
+		graphql = { "prettier" },
+		markdown = { "prettier" },
 	},
 	format_on_save = {
-		timeout_ms = 500,
+		timeout_ms = 1000,
 		lsp_format = "fallback",
 	},
 })
+
+require("conform").formatters.prettier = {
+	ft_parsers = {
+		svelte = "svelte",
+	},
+}
 
 lsp_zero.on_attach(function(_, bufnr)
 	lsp_zero.default_keymaps({ buffer = bufnr })

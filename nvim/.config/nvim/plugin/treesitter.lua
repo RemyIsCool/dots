@@ -21,3 +21,14 @@ require("nvim-treesitter.configs").setup({
 		additional_vim_regex_highlighting = false,
 	},
 })
+
+-- Treesitter for .svx and .mdx files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.svx",
+	command = "setfiletype svx",
+})
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.mdx",
+	command = "setfiletype mdx",
+})
+vim.treesitter.language.register("markdown", { "svx", "mdx" })
