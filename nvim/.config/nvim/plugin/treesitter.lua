@@ -20,6 +20,8 @@ require("nvim-treesitter.configs").setup({
 
 		additional_vim_regex_highlighting = false,
 	},
+
+	indent = { enable = true },
 })
 
 -- Treesitter for .svx and .mdx files
