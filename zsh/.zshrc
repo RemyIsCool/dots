@@ -5,7 +5,7 @@ SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/remy/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -39,10 +39,9 @@ source <(fzf --zsh)
 export EDITOR=nvim
 
 # pnpm
-export PNPM_HOME="/home/remy/.local/share/pnpm"
+export PNPM_HOME="/Users/remyfouquette/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
