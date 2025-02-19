@@ -18,15 +18,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
-# For Godot game development
-alias vg="nvim --listen 127.0.0.1:55432 ."
-
-alias ls="eza -a --icons=always --color=always"
-alias ll="eza -lah --icons=always --color=always"
-alias tree="eza --tree --icons=always --color=always"
+alias ls="eza -a --icons=never --color=always"
+alias ll="eza -lah --icons=never --color=always"
+alias tree="eza --tree --icons=never --color=always"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -35,24 +29,13 @@ alias ....="cd ../../.."
 eval "$(zoxide init --cmd cd zsh)"
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export EDITOR=nvim
 
 source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-ZVM_VI_HIGHLIGHT_FOREGROUND=#cdd6f4
-ZVM_VI_HIGHLIGHT_BACKGROUND=#45475a
-
 zvm_after_init_commands+="source <(fzf --zsh)"
-
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
---color=selected-bg:#45475a \
---multi"
 
 # pnpm
 export PNPM_HOME="/Users/remyfouquette/Library/pnpm"
@@ -65,3 +48,17 @@ esac
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+export PATH="$PATH:/Users/remyfouquette/Documents/shark-browser/depot_tools"
+export PATH=/usr/local/share/dotnet/x64:$PATH
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/remyfouquette/.opam/opam-init/init.zsh' ]] || source '/Users/remyfouquette/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+alias v=nvim
+alias vi=nvim
+alias vim=nvim
