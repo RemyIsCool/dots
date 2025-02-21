@@ -55,7 +55,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<leader>o", "o<Esc>")
 vim.keymap.set("n", "<leader>O", "O<Esc>")
 
-vim.keymap.set("n", "<C-x>", "<Cmd>bdelete<CR>")
+vim.keymap.set("n", "<C-S-x>", "<Cmd>bdelete<CR>")
 vim.keymap.set("n", "<C-n>", "<Cmd>bnext<CR>")
 vim.keymap.set("n", "<C-p>", "<Cmd>bprevious<CR>")
 
@@ -97,6 +97,7 @@ require("lazy").setup({
 	},
 
 	"tpope/vim-sleuth",
+	"tpope/vim-fugitive",
 
 	{
 		"lewis6991/gitsigns.nvim",

@@ -1,0 +1,6 @@
+theme = rose-pine
+font-size = 16
+font-thicken = 1
+adjust-cell-width = -2%
+window-save-state = always
+confirm-close-surface = false
