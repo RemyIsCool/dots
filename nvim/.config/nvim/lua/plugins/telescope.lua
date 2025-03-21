@@ -15,7 +15,6 @@ return {
 		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 		{ "nvim-tree/nvim-web-devicons" },
-		{ "debugloop/telescope-undo.nvim" },
 	},
 	config = function()
 		require("telescope").setup({
@@ -41,8 +40,6 @@ return {
 		vim.keymap.set("n", "<leader>sr", builtin.resume)
 		vim.keymap.set("n", "<leader>s.", builtin.oldfiles)
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers)
-
-		vim.keymap.set("n", "<leader>u", require("telescope").extensions.undo.undo)
 
 		vim.keymap.set("n", "<leader>/", function()
 			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({

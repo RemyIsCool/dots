@@ -12,7 +12,7 @@ return {
 		},
 
 		{
-			"<C-s>",
+			"<D-s>",
 			function()
 				require("conform").format({ async = false, lsp_format = "fallback" })
 				vim.cmd("w")
