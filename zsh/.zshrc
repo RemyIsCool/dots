@@ -48,8 +48,8 @@ esac
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-export PATH="$PATH:/Users/remyfouquette/Documents/shark-browser/depot_tools"
 export PATH=/usr/local/share/dotnet/x64:$PATH
+export PATH=/usr/local/share/dotnet/:$PATH
 
 
 # BEGIN opam configuration
@@ -62,3 +62,10 @@ export PATH=/usr/local/share/dotnet/x64:$PATH
 alias v=nvim
 alias vi=nvim
 alias vim=nvim
+
+alias dotnet64=/usr/local/share/dotnet/x64/dotnet 
+
+export PATH="$PATH:$HOME/.dotnet/tools"
+
+
+alias air=~/go/bin/air

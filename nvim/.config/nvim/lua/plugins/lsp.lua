@@ -62,6 +62,7 @@ return {
 				},
 				ensure_installed = {},
 				automatic_installation = {},
+				automatic_enable = true,
 			})
 		end,
 	},

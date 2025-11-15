@@ -12,9 +12,11 @@ return {
 		},
 
 		{
-			"<D-s>",
+			"<C-s>",
 			function()
-				require("conform").format({ async = false, lsp_format = "fallback" })
+				if vim.bo.filetype ~= "java" then
+					require("conform").format({ async = false, lsp_format = "fallback" })
+				end
 				vim.cmd("w")
 			end,
 			mode = "",

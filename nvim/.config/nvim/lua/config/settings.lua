@@ -28,6 +28,8 @@ vim.opt.scrolloff = 10
 
 vim.opt.signcolumn = "yes"
 
+vim.cmd("set termguicolors")
+
 if vim.g.neovide then
 	vim.o.guifont = "JetBrains Mono:h16"
 	vim.g.neovide_cursor_animation_length = 0
