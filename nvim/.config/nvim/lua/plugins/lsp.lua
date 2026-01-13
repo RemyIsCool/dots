@@ -64,6 +64,11 @@ return {
 				automatic_installation = {},
 				automatic_enable = true,
 			})
+
+			vim.lsp.enable("sourcekit")
+			vim.lsp.config("sourcekit", {
+				filetypes = { "swift", "objc", "objcpp" },
+			})
 		end,
 	},
 }

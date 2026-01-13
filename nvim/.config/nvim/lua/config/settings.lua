@@ -3,6 +3,9 @@ vim.g.maplocalleader = " "
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
+vim.opt.wrap = false
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -15,6 +18,7 @@ end)
 vim.opt.breakindent = true
 
 vim.opt.undofile = true
+vim.opt.swapfile = false
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -27,6 +31,7 @@ vim.opt.inccommand = "split"
 vim.opt.scrolloff = 10
 
 vim.opt.signcolumn = "yes"
+vim.o.winborder = "rounded"
 
 vim.cmd("set termguicolors")
 
