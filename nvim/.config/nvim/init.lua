@@ -56,6 +56,7 @@ vim.pack.add({
     "https://github.com/rafamadriz/friendly-snippets",
     "https://github.com/nvim-treesitter/nvim-treesitter",
     "https://github.com/tpope/vim-sleuth",
+    "https://github.com/mbbill/undotree",
 })
 
 vim.cmd.colorscheme("kanso-zen")
@@ -70,6 +71,7 @@ local lsps = {
     "cssls",
     "html",
     "emmet_language_server",
+    "svelte",
 }
 for _, lsp in ipairs(lsps) do
     vim.lsp.enable(lsp)
@@ -103,9 +105,10 @@ vim.api.nvim_create_autocmd("FileType", {
         if vim.tbl_contains(ts.get_available(), lang) then
             if not vim.tbl_contains(ts.get_installed(), lang) then
                 ts.install(lang)
+            else
+                vim.treesitter.start(args.buf)
+                vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
             end
-
-            vim.treesitter.start(args.buf)
         end
     end,
 })
@@ -157,3 +160,13 @@ vim.keymap.set("v", "<leader>r", function()
         false
     )
 end)
+
+vim.keymap.set("n", "<leader>u", "<Cmd>UndotreeToggle<CR><Cmd>UndotreeFocus<CR>")
+
+vim.keymap.set("n", "<leader>=", function()
+    local view = vim.fn.winsaveview()
+    vim.cmd("normal! gg=G")
+    vim.fn.winrestview(view)
+end)
+
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
